@@ -1,27 +1,19 @@
 //
-//  DetailViewController.swift
-//  Contacts
+//  MainNavController.swift
+//  TripDashboard
 //
-//  Created by stephanie Chamblee on 7/17/17.
+//  Created by stephanie Chamblee on 7/27/17.
 //  Copyright © 2017 Stephanie Chamblee. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
-    
-    @IBOutlet var nameLabel: UILabel!
+class MainNavController: UINavigationController {
 
-    var contact: Contact?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let contact = self.contact {
-            if let name = contact.name {
-                self.nameLabel.text = name
-            }
-        }
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,12 +32,4 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
-}
-
-@IBDesignable public class RoundedImageView: UIImageView {
-    
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = 0.5 * bounds.size.width
-    }
 }

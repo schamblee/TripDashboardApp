@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E85246CC1F2A64B400F744F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85246CB1F2A64B400F744F9 /* LoginViewController.swift */; };
+		E85246CE1F2A843C00F744F9 /* MainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85246CD1F2A843C00F744F9 /* MainNavController.swift */; };
 		E887616D1F27ACE500C8D1EB /* MapDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887616C1F27ACE500C8D1EB /* MapDetails.swift */; };
 		E8E0620C1F1FACC9003A9F7F /* ContactsNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0620B1F1FACC9003A9F7F /* ContactsNavBarViewController.swift */; };
 		E8F6F6D81F1E599F00945414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F6F6CD1F1E599F00945414 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		E85246CB1F2A64B400F744F9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E85246CD1F2A843C00F744F9 /* MainNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavController.swift; sourceTree = "<group>"; };
 		E8693EC31F1B90F7000262AC /* TripDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E887616C1F27ACE500C8D1EB /* MapDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDetails.swift; sourceTree = "<group>"; };
 		E8E0620B1F1FACC9003A9F7F /* ContactsNavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsNavBarViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				E8F6F6CE1F1E599F00945414 /* Assets.xcassets */,
 				E8F6F6CF1F1E599F00945414 /* LaunchScreen.storyboard */,
 				E8F6F6D11F1E599F00945414 /* Main.storyboard */,
+				E85246CD1F2A843C00F744F9 /* MainNavController.swift */,
 				E85246CB1F2A64B400F744F9 /* LoginViewController.swift */,
 				E887616C1F27ACE500C8D1EB /* MapDetails.swift */,
 				E8F6F6E41F1E7DF900945414 /* TripMapViewController.swift */,
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E85246CE1F2A843C00F744F9 /* MainNavController.swift in Sources */,
 				E85246CC1F2A64B400F744F9 /* LoginViewController.swift in Sources */,
 				E8F6F6E51F1E7DF900945414 /* TripMapViewController.swift in Sources */,
 				E8E0620C1F1FACC9003A9F7F /* ContactsNavBarViewController.swift in Sources */,
