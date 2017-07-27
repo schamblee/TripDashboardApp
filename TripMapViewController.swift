@@ -76,7 +76,6 @@ class TripMapViewController: UIViewController {
         self.tabBarController?.navigationItem.title = "X Squad Thailand"
         let nav = self.navigationController?.navigationBar
         nav?.tintColor = UIColor(hue: 0.5583, saturation: 1, brightness: 0.65, alpha: 1.0)
-        nav?.isTranslucent = true
         
     }
 
