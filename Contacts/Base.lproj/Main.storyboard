@@ -284,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="2002.4000000000001" y="121.88905547226388"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="wsz-cd-7Kl">
             <objects>
-                <viewController id="5KH-sC-RMa" sceneMemberID="viewController">
+                <viewController id="5KH-sC-RMa" customClass="LoginViewController" customModule="TripDashboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="97i-vE-ap5"/>
                         <viewControllerLayoutGuide type="bottom" id="uCF-1Y-a9p"/>
@@ -321,7 +321,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="FH8-YE-Hq3" kind="show" identifier="loginSegue" id="40d-Y4-owO"/>
+                                    <action selector="loginBtn:" destination="5KH-sC-RMa" eventType="touchUpInside" id="6lD-IK-7an"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="EpV-3y-WLZ">
@@ -330,6 +330,12 @@
                                     <constraint firstAttribute="height" constant="80" id="d4K-U9-0bG"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzB-c7-NG7">
+                                <rect key="frame" x="33" y="112" width="309" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -347,17 +353,26 @@
                             <constraint firstItem="pnV-nh-akw" firstAttribute="top" secondItem="EpV-3y-WLZ" secondAttribute="bottom" constant="8" symbolic="YES" id="cDp-3W-7ox"/>
                             <constraint firstItem="pnV-nh-akw" firstAttribute="leading" secondItem="Ovl-0M-DXO" secondAttribute="leadingMargin" constant="17" id="doy-Kc-kwz"/>
                             <constraint firstItem="EpV-3y-WLZ" firstAttribute="trailing" secondItem="Ovl-0M-DXO" secondAttribute="trailingMargin" id="hyC-dR-Eaz"/>
+                            <constraint firstItem="FzB-c7-NG7" firstAttribute="trailing" secondItem="pnV-nh-akw" secondAttribute="trailing" id="ihZ-5R-Uem"/>
+                            <constraint firstItem="FzB-c7-NG7" firstAttribute="leading" secondItem="pnV-nh-akw" secondAttribute="leading" id="j6k-rp-C2L"/>
                             <constraint firstItem="pnV-nh-akw" firstAttribute="top" secondItem="EpV-3y-WLZ" secondAttribute="bottom" constant="8" id="o6z-sh-PIg"/>
+                            <constraint firstItem="EpV-3y-WLZ" firstAttribute="top" secondItem="FzB-c7-NG7" secondAttribute="bottom" constant="8" symbolic="YES" id="ph1-9K-hla"/>
                             <constraint firstItem="pnV-nh-akw" firstAttribute="leading" secondItem="yMz-o8-rYc" secondAttribute="leading" id="sHj-kc-YxA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nBy-eS-ybd">
                         <barButtonItem key="backBarButtonItem" title=" " id="7bR-8g-yNU"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="failedLoginLabel" destination="FzB-c7-NG7" id="W8S-qj-Wcd"/>
+                        <outlet property="passwordTextField" destination="7ih-8r-Q3h" id="eCV-T1-UCg"/>
+                        <outlet property="usernameTextField" destination="pnV-nh-akw" id="7JB-pB-B23"/>
+                        <segue destination="FH8-YE-Hq3" kind="presentation" identifier="loginSegue" id="iH9-9p-71L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfz-zG-8mS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="160"/>
+            <point key="canvasLocation" x="-47.200000000000003" y="158.77061469265368"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cdU-lJ-h7H">
