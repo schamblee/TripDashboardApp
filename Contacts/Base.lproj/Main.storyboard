@@ -351,7 +351,7 @@
                                     <action selector="loginBtn:" destination="5KH-sC-RMa" eventType="touchUpInside" id="6lD-IK-7an"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="EpV-3y-WLZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="EpV-3y-WLZ">
                                 <rect key="frame" x="16" y="141" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="d4K-U9-0bG"/>
@@ -441,7 +441,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image-1" width="324" height="77"/>
+        <image name="Image-1" width="421" height="100"/>
         <image name="PersonPlaceholder" width="100" height="100"/>
     </resources>
 </document>
