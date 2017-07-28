@@ -226,20 +226,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQm-1N-PrL">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQm-1N-PrL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <connections>
                                     <outlet property="delegate" destination="9ZV-eB-wS1" id="2m8-ha-2VP"/>
                                 </connections>
                             </mapView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="team name" translatesAutoresizingMaskIntoConstraints="NO" id="Vti-gU-ugl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="9ZV-eB-wS1" id="9ge-vT-1Kj"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -267,14 +259,13 @@
                 <searchDisplayController id="AaT-OT-PBO">
                     <connections>
                         <outlet property="delegate" destination="9ZV-eB-wS1" id="V9k-jL-6h1"/>
-                        <outlet property="searchBar" destination="Vti-gU-ugl" id="VTS-7I-ed2"/>
                         <outlet property="searchContentsController" destination="9ZV-eB-wS1" id="Vnl-2U-j3A"/>
                         <outlet property="searchResultsDataSource" destination="9ZV-eB-wS1" id="zLe-xO-tR0"/>
                         <outlet property="searchResultsDelegate" destination="9ZV-eB-wS1" id="H1h-ve-QDW"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2002.4000000000001" y="-664.31784107946032"/>
+            <point key="canvasLocation" x="2087" y="-666"/>
         </scene>
         <!--Country Info-->
         <scene sceneID="kk3-Wu-AqH">

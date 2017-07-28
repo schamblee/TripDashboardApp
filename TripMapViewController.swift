@@ -16,6 +16,17 @@ class TripMapViewController: UIViewController {
     
     @IBOutlet weak var tripMap: MKMapView!
     
+    
+    var searchController:UISearchController!
+    var annotation:MKAnnotation!
+    var localSearchRequest:MKLocalSearchRequest!
+    var localSearch:MKLocalSearch!
+    var localSearchResponse:MKLocalSearchResponse!
+    var error:NSError!
+    var pointAnnotation:MKPointAnnotation!
+    var pinAnnotationView:MKPinAnnotationView!
+
+    
     let regionRadius: CLLocationDistance = 10000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
@@ -81,5 +92,7 @@ class TripMapViewController: UIViewController {
         nav?.tintColor = UIColor(hue: 0.5583, saturation: 1, brightness: 0.65, alpha: 1.0)
         
     }
+    
+    
 
 }
