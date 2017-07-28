@@ -68,6 +68,8 @@ class CountryInfoViewController: UIViewController, UIWebViewDelegate {
     
     override func awakeFromNib() {
         self.tabBarItem.title = "Country Info"
+        self.tabBarController?.tabBar.items![1].image = UIImage(named: "infoIcon")
+        self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "infoIcon")
     }
     
     override func viewWillAppear(_ animated: Bool) {

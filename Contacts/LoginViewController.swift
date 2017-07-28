@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         passwordTextField.isSecureTextEntry = true
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +37,10 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "loginSegue", sender: nil)
             }
     }
-}
-    
 
+    override func awakeFromNib() {
+        self.tabBarItem.title = "Logout"
+        self.tabBarController?.tabBar.items![3].image = UIImage(named: "logoutIcon")
+        self.tabBarController?.tabBar.items![3].selectedImage = UIImage(named: "logoutIcon")
+    }
+}

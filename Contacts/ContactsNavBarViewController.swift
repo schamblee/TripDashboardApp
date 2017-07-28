@@ -22,6 +22,8 @@ class ContactsNavBarViewController: UINavigationController {
     }
     override func awakeFromNib() {
         self.tabBarItem.title = "Team Phones"
+        self.tabBarController?.tabBar.items![2].image = UIImage(named: "phoneIcon")
+        self.tabBarController?.tabBar.items![2].selectedImage = UIImage(named: "phoneIcon")
     }
     
     override func viewWillAppear(_ animated: Bool) {

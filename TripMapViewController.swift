@@ -12,6 +12,7 @@ import MapKit
 class TripMapViewController: UIViewController {
     
     
+    var resultSearchController:UISearchController? = nil
     
     @IBOutlet weak var tripMap: MKMapView!
     
@@ -69,6 +70,8 @@ class TripMapViewController: UIViewController {
     override func awakeFromNib() {
         self.tabBarItem.title = "Trip Map"
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hue: 0.5583, saturation: 1, brightness: 0.65, alpha: 1.0)], for: .normal)
+        self.tabBarController?.tabBar.items![0].image = UIImage(named: "mapIcon")
+        self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "mapIcon")
     }
     
     override func viewWillAppear(_ animated: Bool) {
