@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import MapKit
+import GoogleMaps
+import GooglePlaces
 
-class MapDetails: NSObject, MKAnnotation {
+class MapDetails: NSObject {
     let title: String?
     let locationName: String
     let discipline: String

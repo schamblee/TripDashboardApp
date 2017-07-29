@@ -12,62 +12,48 @@ import GooglePlaces
 
 class TripMapViewController: UIViewController {
     
-    /*@IBOutlet weak var tripMap: MKMapView!
     
-    
-    var searchController:UISearchController!
-    var annotation:MKAnnotation!
-    var localSearchRequest:MKLocalSearchRequest!
-    var localSearch:MKLocalSearch!
-    var localSearchResponse:MKLocalSearchResponse!
-    var error:NSError!
-    var pointAnnotation:MKPointAnnotation!
-    var pinAnnotationView:MKPinAnnotationView!
-
-    
-    let regionRadius: CLLocationDistance = 10000
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
+    override func loadView() {
+        let camera = GMSCameraPosition.camera(withLatitude: 18.8038360000, longitude: 98.9720810000, zoom: 12.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        view = mapView
+        // show details on map
         
-        tripMap.setRegion(coordinateRegion, animated: true)
-    // show details on map
-        let mapDetail = MapDetails(title: "Team 1",
-            locationName: "The Haven Project",
-            discipline: "Chiang Mai",
-            coordinate: CLLocationCoordinate2D(latitude: 18.8038360000, longitude: 98.9720810000))
-        let mapDetail2 = MapDetails(title: "Team 2",
-            locationName: "YWAM - Chang Mai",
-            discipline: "Chiang Mai",
-            coordinate: CLLocationCoordinate2D(latitude: 18.7311880000, longitude: 98.9339640000))
-        let mapDetail3 = MapDetails(title: "Team 3",
-            locationName: "Nikki's Place Agape Home",
-            discipline: "Chiang Mai",
-            coordinate: CLLocationCoordinate2D(latitude: 18.8673030000, longitude: 99.0222460000))
-        let mapDetail4 = MapDetails(title: "Team 4",
-            locationName: "Abba House Foundation",
-            discipline: "Chiang Mai",
-            coordinate: CLLocationCoordinate2D(latitude: 18.8868550000, longitude: 99.0099670000))
-        let mapDetail5 = MapDetails(title: "Team 4",
-            locationName: "Remember Nhu",
-            discipline: "Chiang Mai",
-            coordinate: CLLocationCoordinate2D(latitude: 18.8705466, longitude: 99.1362407))
-
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: 18.8038360000, longitude: 98.9720810000)
+        marker.title = "Team 1"
+        marker.snippet = "The Haven Project"
+        marker.map = mapView
         
-        tripMap.addAnnotation(mapDetail)
-        tripMap.addAnnotation(mapDetail2)
-        tripMap.addAnnotation(mapDetail3)
-        tripMap.addAnnotation(mapDetail4)
-        tripMap.addAnnotation(mapDetail5)
+        let marker2 = GMSMarker()
+        marker2.position = CLLocationCoordinate2D(latitude: 18.7311880000, longitude: 98.9339640000)
+        marker2.title = "Team 2"
+        marker2.snippet = "YWAM - Chang Mai"
+        marker2.map = mapView
+        
+        let marker3 = GMSMarker()
+        marker3.position = CLLocationCoordinate2D(latitude: 18.8673030000, longitude: 99.0222460000)
+        marker3.title = "Team 3"
+        marker3.snippet = "Nikki's Place Agape Home"
+        marker3.map = mapView
+        
+        let marker4 = GMSMarker()
+        marker4.position = CLLocationCoordinate2D(latitude: 18.8868550000, longitude: 99.0099670000)
+        marker4.title = "Team 4"
+        marker4.snippet = "Abba House Foundation"
+        marker4.map = mapView
+        
+        let marker5 = GMSMarker()
+        marker5.position = CLLocationCoordinate2D(latitude: 18.8705466, longitude: 99.1362407)
+        marker5.title = "Team 5"
+        marker5.snippet = "Remember Nhu"
+        marker5.map = mapView
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // set initial location
-        let initialLocation = CLLocation(latitude: 18.8038360000, longitude: 98.9720810000)
-        centerMapOnLocation(location: initialLocation)
-        
 
     }
     
@@ -90,7 +76,5 @@ class TripMapViewController: UIViewController {
         nav?.tintColor = UIColor(hue: 0.5583, saturation: 1, brightness: 0.65, alpha: 1.0)
         
     }
+}
 
-}
-*/
-}
