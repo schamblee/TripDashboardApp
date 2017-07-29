@@ -41,7 +41,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="nUc-BR-CSc" style="IBUITableViewCellStyleDefault" id="hOw-D6-I2U">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hOw-D6-I2U" id="lIf-HT-43W">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -225,26 +225,11 @@
                     <view key="view" contentMode="scaleToFill" id="KDa-qy-rGg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQm-1N-PrL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <connections>
-                                    <outlet property="delegate" destination="9ZV-eB-wS1" id="2m8-ha-2VP"/>
-                                </connections>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="OQm-1N-PrL" firstAttribute="bottom" secondItem="zb7-0A-3w6" secondAttribute="top" id="6K5-04-iaM"/>
-                            <constraint firstAttribute="trailing" secondItem="OQm-1N-PrL" secondAttribute="trailing" id="7r0-oY-4yd"/>
-                            <constraint firstItem="OQm-1N-PrL" firstAttribute="leading" secondItem="KDa-qy-rGg" secondAttribute="leading" id="ZvM-5h-zP3"/>
-                            <constraint firstItem="OQm-1N-PrL" firstAttribute="top" secondItem="KDa-qy-rGg" secondAttribute="top" id="hse-Zc-qyY"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="3Zq-XV-gal"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="AaT-OT-PBO" id="T9d-q3-KAo"/>
-                        <outlet property="tripMap" destination="OQm-1N-PrL" id="CNR-Gx-zsI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyo-dd-iCR" userLabel="First Responder" sceneMemberID="firstResponder"/>

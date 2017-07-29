@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import MapKit
+import GoogleMaps
+import GooglePlaces
 
 class TripMapViewController: UIViewController {
     
-    
-    var resultSearchController:UISearchController? = nil
-    
-    @IBOutlet weak var tripMap: MKMapView!
+    /*@IBOutlet weak var tripMap: MKMapView!
     
     
     var searchController:UISearchController!
@@ -92,7 +90,7 @@ class TripMapViewController: UIViewController {
         nav?.tintColor = UIColor(hue: 0.5583, saturation: 1, brightness: 0.65, alpha: 1.0)
         
     }
-    
-    
 
+}
+*/
 }

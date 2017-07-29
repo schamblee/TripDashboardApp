@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A5AFBBD50A2D49F933420F9 /* Pods_TripDashboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DBEB674B16543D8896C47 /* Pods_TripDashboard.framework */; };
 		E85246CC1F2A64B400F744F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85246CB1F2A64B400F744F9 /* LoginViewController.swift */; };
 		E85246CE1F2A843C00F744F9 /* MainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85246CD1F2A843C00F744F9 /* MainNavController.swift */; };
 		E887616D1F27ACE500C8D1EB /* MapDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887616C1F27ACE500C8D1EB /* MapDetails.swift */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B6DBEB674B16543D8896C47 /* Pods_TripDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A949CDDD3CD3CAD3FA56ED86 /* Pods-TripDashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripDashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripDashboard/Pods-TripDashboard.release.xcconfig"; sourceTree = "<group>"; };
 		E85246CB1F2A64B400F744F9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E85246CD1F2A843C00F744F9 /* MainNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavController.swift; sourceTree = "<group>"; };
 		E8693EC31F1B90F7000262AC /* TripDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +42,7 @@
 		E8F6F6D61F1E599F00945414 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8F6F6E41F1E7DF900945414 /* TripMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripMapViewController.swift; path = ../TripMapViewController.swift; sourceTree = "<group>"; };
 		E8F6F6E61F1E86D000945414 /* CountryInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryInfoViewController.swift; sourceTree = "<group>"; };
+		F8185890A57785687228FF1D /* Pods-TripDashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripDashboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TripDashboard/Pods-TripDashboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,17 +50,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5AFBBD50A2D49F933420F9 /* Pods_TripDashboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6583B996F57D5F8063296F08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B6DBEB674B16543D8896C47 /* Pods_TripDashboard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E8693EBA1F1B90F7000262AC = {
 			isa = PBXGroup;
 			children = (
 				E8F6F6CC1F1E599F00945414 /* TripDashboard */,
 				E8693EC41F1B90F7000262AC /* Products */,
+				F243F226A73A0F73211A8EF9 /* Pods */,
+				6583B996F57D5F8063296F08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +105,15 @@
 			path = Contacts;
 			sourceTree = "<group>";
 		};
+		F243F226A73A0F73211A8EF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8185890A57785687228FF1D /* Pods-TripDashboard.debug.xcconfig */,
+				A949CDDD3CD3CAD3FA56ED86 /* Pods-TripDashboard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,9 +121,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8693ED51F1B90F7000262AC /* Build configuration list for PBXNativeTarget "TripDashboard" */;
 			buildPhases = (
+				563D069AA196D93D54FB28A3 /* [CP] Check Pods Manifest.lock */,
 				E8693EBF1F1B90F7000262AC /* Sources */,
 				E8693EC01F1B90F7000262AC /* Frameworks */,
 				E8693EC11F1B90F7000262AC /* Resources */,
+				39CE4B8A05AE83283F1865AA /* [CP] Embed Pods Frameworks */,
+				1C3978D9FB3E5093DE401C3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,6 +185,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C3978D9FB3E5093DE401C3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TripDashboard/Pods-TripDashboard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39CE4B8A05AE83283F1865AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TripDashboard/Pods-TripDashboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		563D069AA196D93D54FB28A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8693EBF1F1B90F7000262AC /* Sources */ = {
@@ -296,6 +371,7 @@
 		};
 		E8693ED61F1B90F7000262AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8185890A57785687228FF1D /* Pods-TripDashboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -311,6 +387,7 @@
 		};
 		E8693ED71F1B90F7000262AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A949CDDD3CD3CAD3FA56ED86 /* Pods-TripDashboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
-        if usernameTextField.text != username && passwordTextField.text != password {
+        if usernameTextField.text != username || passwordTextField.text != password {
             failedLoginLabel.text = "Incorrect Email or Password"
         }
         else {
@@ -42,5 +42,7 @@ class LoginViewController: UIViewController {
         self.tabBarItem.title = "Logout"
         self.tabBarController?.tabBar.items![3].image = UIImage(named: "logoutIcon")
         self.tabBarController?.tabBar.items![3].selectedImage = UIImage(named: "logoutIcon")
+
     }
+    
 }
