@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
     
     @IBOutlet var nameLabel: UILabel!
 
@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.delegate = self
 
         if let contact = self.contact {
             if let name = contact.name {
@@ -30,15 +31,22 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        let tabBarIndex = tabBarController.selectedIndex
+        if tabBarIndex == 3 {
+            let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.performSegue(withIdentifier: "cancelLogout", sender: self)
+            })
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                print("OK")
+            })
+            
+            self.present(alert, animated: true)
+        }
     }
-    */
 
 }
 
@@ -48,4 +56,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         super.layoutSubviews()
         layer.cornerRadius = 0.5 * bounds.size.width
     }
+    
+
 }

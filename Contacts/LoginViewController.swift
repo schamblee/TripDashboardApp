@@ -14,8 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var failedLoginLabel: UILabel!
     
-    let username = "me@me.com"
-    let password = "123"
+    let username = ""
+    let password = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

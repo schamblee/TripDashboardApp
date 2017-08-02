@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class CountryInfoViewController: UIViewController, UIWebViewDelegate {
+class CountryInfoViewController: UIViewController, UIWebViewDelegate, UITabBarControllerDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     
@@ -58,7 +58,8 @@ class CountryInfoViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView.delegate = self        
+        webView.delegate = self
+        self.tabBarController?.delegate = self
         
         let requestObj = URLRequest(url: webviewURL)
         
@@ -70,6 +71,7 @@ class CountryInfoViewController: UIViewController, UIWebViewDelegate {
         self.tabBarItem.title = "Country Info"
         self.tabBarController?.tabBar.items![1].image = UIImage(named: "infoIcon")
         self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "infoIcon")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,5 +91,23 @@ class CountryInfoViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         activityIndicator.stopAnimating()
     }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        let tabBarIndex = tabBarController.selectedIndex
+        if tabBarIndex == 3 {
+            let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.performSegue(withIdentifier: "cancelLogout", sender: self)
+            })
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                print("OK")
+            })
+            
+            self.present(alert, animated: true)
+        }
+    }
+    
     
 }

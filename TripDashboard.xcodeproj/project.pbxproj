@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					E8693EC21F1B90F7000262AC = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = BBZW8S27T5;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -371,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = BBZW8S27T5;
 				INFOPLIST_FILE = TripDashboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Stephanie.TripDashboard;
@@ -387,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = BBZW8S27T5;
 				INFOPLIST_FILE = TripDashboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Stephanie.TripDashboard;
