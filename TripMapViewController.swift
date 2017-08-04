@@ -10,14 +10,17 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class TripMapViewController: UIViewController, UITabBarControllerDelegate {
+class TripMapViewController: UIViewController, UITabBarControllerDelegate, CLLocationManagerDelegate {
+    
+    @IBOutlet weak var mapView: GMSMapView!
     
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
-    
+    var locationManager = CLLocationManager()
     
     override func loadView() {
+        
         let camera = GMSCameraPosition.camera(withLatitude: 18.8038360000, longitude: 98.9720810000, zoom: 12.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
@@ -53,16 +56,13 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate {
         marker5.snippet = "Remember Nhu"
         marker5.map = mapView
         
-        mapView.isMyLocationEnabled = true
-        mapView.accessibilityElementsHidden = false
-        
-        
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.delegate = self
+        initializeTheLocationManager()
 
     }
     
@@ -86,6 +86,30 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate {
         
     }
     
+    func initializeTheLocationManager()
+    {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager,      didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locationManager.location?.coordinate
+        
+        cameraMoveToLocation(toLocation: location)
+        
+    }
+    
+    func cameraMoveToLocation(toLocation: CLLocationCoordinate2D?) {
+        if toLocation != nil {
+            mapView.camera = GMSCameraPosition.camera(withTarget: toLocation!, zoom: 15)
+            
+            
+        }
+    }
+
     
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
@@ -95,6 +119,7 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate {
             let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                
                 self.performSegue(withIdentifier: "cancelLogout", sender: self)
             })
             alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
@@ -102,10 +127,11 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate {
             })
             
             self.present(alert, animated: true)
+            }
         }
     }
 
-}
+
 
 
 
