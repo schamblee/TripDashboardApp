@@ -14,6 +14,11 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate, CLLoc
     
     @IBOutlet weak var mapView: GMSMapView!
     
+
+    
+    
+    
+    
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
@@ -56,6 +61,8 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate, CLLoc
         marker5.snippet = "Remember Nhu"
         marker5.map = mapView
         
+        mapView.isMyLocationEnabled = true
+        
         
     }
     
@@ -84,6 +91,8 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate, CLLoc
         let nav = self.navigationController?.navigationBar
         nav?.tintColor = UIColor(hue: 0.5583, saturation: 1, brightness: 0.65, alpha: 1.0)
         
+    
+        
     }
     
     func initializeTheLocationManager()
@@ -100,7 +109,10 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate, CLLoc
         
         cameraMoveToLocation(toLocation: location)
         
+        
     }
+    
+
     
     func cameraMoveToLocation(toLocation: CLLocationCoordinate2D?) {
         if toLocation != nil {
