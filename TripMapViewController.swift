@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import SwiftyJSON
+import Alamofire
 
 class TripMapViewController: UIViewController, UITabBarControllerDelegate, CLLocationManagerDelegate {
     
@@ -25,6 +27,23 @@ class TripMapViewController: UIViewController, UITabBarControllerDelegate, CLLoc
     var locationManager = CLLocationManager()
     
     override func loadView() {
+        
+        let url = "https://www.adventures.org/Valkyrie/FRM/reports/ajax/planning_events.asp?usagetype=ministry&showall=yes&tripcode=17W0803"
+        
+        Alamofire.request(url, method: .get).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                print("response: \(value)")
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+            print("Request: \(response.request)")
+            print("Response: \(response.response)")
+            print("Error: \(response)")
+        }
+        
         
         let camera = GMSCameraPosition.camera(withLatitude: 18.8038360000, longitude: 98.9720810000, zoom: 12.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)

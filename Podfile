@@ -9,4 +9,5 @@ target ‘TripDashboard’ do
   # Pods for pods test
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'AlamofireSwiftyJSON'
 end

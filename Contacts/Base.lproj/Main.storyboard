@@ -306,14 +306,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-rf-OB3">
-                                <rect key="frame" x="16" y="20" width="289" height="489"/>
+                                <rect key="frame" x="16" y="136" width="289" height="381"/>
                                 <color key="backgroundColor" red="0.98899033749999998" green="0.99503857650000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="381" id="9Ms-IV-dns"/>
+                                </constraints>
                             </webView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gjd-Ls-5R5">
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                             </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ed9-wQ-j9T">
-                                <rect key="frame" x="16" y="525" width="289" height="29"/>
+                                <rect key="frame" x="16" y="533" width="289" height="21"/>
                                 <segments>
                                     <segment title="CDC"/>
                                     <segment title="State Dept"/>
@@ -324,31 +327,44 @@
                                     <action selector="indexChange:" destination="pFE-YH-OHS" eventType="valueChanged" id="7Bw-Sh-XMe"/>
                                 </connections>
                             </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KX-ca-uA7">
+                                <rect key="frame" x="0.0" y="44" width="320" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="fcI-Oh-rWK"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="pFE-YH-OHS" id="OMP-pH-4dD"/>
+                                    <outlet property="delegate" destination="pFE-YH-OHS" id="WEy-IO-V3S"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Icb-rf-OB3" firstAttribute="centerX" secondItem="gjd-Ls-5R5" secondAttribute="centerX" id="37O-z3-3rB"/>
-                            <constraint firstItem="Ed9-wQ-j9T" firstAttribute="trailing" secondItem="Icb-rf-OB3" secondAttribute="trailing" id="6Hx-bU-4aZ"/>
-                            <constraint firstItem="Ed9-wQ-j9T" firstAttribute="leading" secondItem="Icb-rf-OB3" secondAttribute="leading" id="Feo-9y-Fra"/>
+                            <constraint firstItem="9KX-ca-uA7" firstAttribute="centerX" secondItem="gjd-Ls-5R5" secondAttribute="centerX" id="233-lR-9aW"/>
+                            <constraint firstItem="Icb-rf-OB3" firstAttribute="leading" secondItem="Ed9-wQ-j9T" secondAttribute="leading" id="8V1-7B-GCs"/>
                             <constraint firstItem="gjd-Ls-5R5" firstAttribute="centerX" secondItem="1bx-Y7-6Y7" secondAttribute="centerX" id="LaW-YB-fMU"/>
                             <constraint firstItem="EXW-mP-N0L" firstAttribute="top" secondItem="Ed9-wQ-j9T" secondAttribute="bottom" constant="15" id="MTZ-g3-Nkn"/>
-                            <constraint firstItem="Ed9-wQ-j9T" firstAttribute="top" secondItem="Icb-rf-OB3" secondAttribute="bottom" constant="16" id="TUQ-7o-2fU"/>
-                            <constraint firstItem="Icb-rf-OB3" firstAttribute="top" secondItem="QDs-it-7ZF" secondAttribute="bottom" id="jHd-Ef-7CL"/>
-                            <constraint firstItem="Icb-rf-OB3" firstAttribute="leading" secondItem="1bx-Y7-6Y7" secondAttribute="leadingMargin" id="qpR-b3-nGN"/>
+                            <constraint firstItem="9KX-ca-uA7" firstAttribute="top" secondItem="QDs-it-7ZF" secondAttribute="bottom" constant="24" id="Uds-NA-o2R"/>
+                            <constraint firstItem="Icb-rf-OB3" firstAttribute="centerX" secondItem="gjd-Ls-5R5" secondAttribute="centerX" id="ZyF-yh-Hq7"/>
+                            <constraint firstItem="Icb-rf-OB3" firstAttribute="leading" secondItem="1bx-Y7-6Y7" secondAttribute="leadingMargin" id="ieX-IR-htv"/>
+                            <constraint firstItem="Icb-rf-OB3" firstAttribute="top" secondItem="9KX-ca-uA7" secondAttribute="bottom" constant="18" id="ocL-AV-cYS"/>
+                            <constraint firstItem="Ed9-wQ-j9T" firstAttribute="top" secondItem="Icb-rf-OB3" secondAttribute="bottom" constant="16" id="woE-8f-8Ny"/>
                             <constraint firstItem="gjd-Ls-5R5" firstAttribute="centerY" secondItem="1bx-Y7-6Y7" secondAttribute="centerY" id="xsb-Gv-YAV"/>
+                            <constraint firstItem="Icb-rf-OB3" firstAttribute="trailing" secondItem="Ed9-wQ-j9T" secondAttribute="trailing" id="zsx-g8-JUZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="hX0-v5-qM7"/>
                     <connections>
                         <outlet property="activityIndicator" destination="gjd-Ls-5R5" id="82q-Zm-6yp"/>
                         <outlet property="countrySC" destination="Ed9-wQ-j9T" id="nrX-DM-ocd"/>
+                        <outlet property="pickerView" destination="9KX-ca-uA7" id="agm-7C-0Qn"/>
                         <outlet property="webView" destination="Icb-rf-OB3" id="yzS-Aa-Ux4"/>
                         <segue destination="TCL-UY-Kvd" kind="show" identifier="cancelLogout" id="GBW-5i-awc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLK-iF-9Bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002.4000000000001" y="121.88905547226388"/>
+            <point key="canvasLocation" x="2000.625" y="121.47887323943662"/>
         </scene>
         <!--Item-->
         <scene sceneID="wsz-cd-7Kl">
@@ -482,8 +498,8 @@
         <image name="PersonPlaceholder" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8RT-FS-5Bi"/>
         <segue reference="QSz-eV-svp"/>
+        <segue reference="GBW-5i-awc"/>
         <segue reference="ua5-dF-V9s"/>
     </inferredMetricsTieBreakers>
 </document>

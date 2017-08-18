@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3A5AFBBD50A2D49F933420F9 /* Pods_TripDashboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6DBEB674B16543D8896C47 /* Pods_TripDashboard.framework */; };
+		E83AC29F1F3E49B20044F62D /* MapDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83AC29E1F3E49B20044F62D /* MapDataModel.swift */; };
 		E85246CC1F2A64B400F744F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85246CB1F2A64B400F744F9 /* LoginViewController.swift */; };
 		E85246CE1F2A843C00F744F9 /* MainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85246CD1F2A843C00F744F9 /* MainNavController.swift */; };
+		E8D0CEA21F3A5655001006EB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0CEA11F3A5655001006EB /* Resource.swift */; };
 		E8E0620C1F1FACC9003A9F7F /* ContactsNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0620B1F1FACC9003A9F7F /* ContactsNavBarViewController.swift */; };
 		E8F6F6D81F1E599F00945414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F6F6CD1F1E599F00945414 /* AppDelegate.swift */; };
 		E8F6F6D91F1E599F00945414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F6F6CE1F1E599F00945414 /* Assets.xcassets */; };
@@ -26,9 +28,11 @@
 /* Begin PBXFileReference section */
 		8B6DBEB674B16543D8896C47 /* Pods_TripDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A949CDDD3CD3CAD3FA56ED86 /* Pods-TripDashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripDashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripDashboard/Pods-TripDashboard.release.xcconfig"; sourceTree = "<group>"; };
+		E83AC29E1F3E49B20044F62D /* MapDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapDataModel.swift; path = TripDashboard/MapDataModel.swift; sourceTree = SOURCE_ROOT; };
 		E85246CB1F2A64B400F744F9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E85246CD1F2A843C00F744F9 /* MainNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavController.swift; sourceTree = "<group>"; };
 		E8693EC31F1B90F7000262AC /* TripDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D0CEA11F3A5655001006EB /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		E8E0620B1F1FACC9003A9F7F /* ContactsNavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsNavBarViewController.swift; sourceTree = "<group>"; };
 		E8F6F6CD1F1E599F00945414 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F6F6CE1F1E599F00945414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,10 +97,12 @@
 				E8F6F6E41F1E7DF900945414 /* TripMapViewController.swift */,
 				E8F6F6E61F1E86D000945414 /* CountryInfoViewController.swift */,
 				E8F6F6D31F1E599F00945414 /* Contact.swift */,
+				E8D0CEA11F3A5655001006EB /* Resource.swift */,
 				E8F6F6D41F1E599F00945414 /* ContactsTableTableViewController.swift */,
 				E8F6F6D51F1E599F00945414 /* DetailViewController.swift */,
 				E8F6F6D61F1E599F00945414 /* Info.plist */,
 				E8E0620B1F1FACC9003A9F7F /* ContactsNavBarViewController.swift */,
+				E83AC29E1F3E49B20044F62D /* MapDataModel.swift */,
 			);
 			name = TripDashboard;
 			path = Contacts;
@@ -239,7 +245,9 @@
 			files = (
 				E85246CE1F2A843C00F744F9 /* MainNavController.swift in Sources */,
 				E85246CC1F2A64B400F744F9 /* LoginViewController.swift in Sources */,
+				E83AC29F1F3E49B20044F62D /* MapDataModel.swift in Sources */,
 				E8F6F6E51F1E7DF900945414 /* TripMapViewController.swift in Sources */,
+				E8D0CEA21F3A5655001006EB /* Resource.swift in Sources */,
 				E8E0620C1F1FACC9003A9F7F /* ContactsNavBarViewController.swift in Sources */,
 				E8F6F6DC1F1E599F00945414 /* Contact.swift in Sources */,
 				E8F6F6E71F1E86D000945414 /* CountryInfoViewController.swift in Sources */,
@@ -372,12 +380,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BBZW8S27T5;
 				INFOPLIST_FILE = TripDashboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Stephanie.TripDashboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TripDashboard-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -389,12 +399,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BBZW8S27T5;
 				INFOPLIST_FILE = TripDashboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Stephanie.TripDashboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TripDashboard-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -4,8 +4,6 @@
 <dict>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Show your location on the map</string>
-    <key>NSLocationUsageDescription</key>
-    <string>My App would pretty please like to use your GPS.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

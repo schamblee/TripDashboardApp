@@ -7,12 +7,15 @@
 //
 
 import UIKit
-class CountryInfoViewController: UIViewController, UIWebViewDelegate, UITabBarControllerDelegate {
+class CountryInfoViewController: UIViewController, UIWebViewDelegate, UITabBarControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var webView: UIWebView!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    var pickerData: [String] = [String]()
     
     var webviewURL: URL = URL(string: "https://wwwnc.cdc.gov/travel/destinations/traveler/none/thailand?s_cid=ncezid-dgmq-travel-single-001")!
     var webviewURL2: URL = URL(string: "https://travel.state.gov/content/passports/en/country/thailand.html")!
@@ -35,6 +38,8 @@ class CountryInfoViewController: UIViewController, UIWebViewDelegate, UITabBarCo
         default:
             break;
         }
+        
+        
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -58,12 +63,13 @@ class CountryInfoViewController: UIViewController, UIWebViewDelegate, UITabBarCo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        
         webView.delegate = self
         self.tabBarController?.delegate = self
         
-        let requestObj = URLRequest(url: webviewURL)
-        
-        webView.loadRequest(requestObj)
+        pickerData = ["Thailand", "Cambodia", "Malaysia", "India", "Nepal", "Mozambique", "Swaziland", "South Africa"]
         
     }
     
@@ -76,13 +82,34 @@ class CountryInfoViewController: UIViewController, UIWebViewDelegate, UITabBarCo
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.tabBarController?.navigationItem.title = "Thailand Info"
+        self.tabBarController?.navigationItem.title = "Country Info"
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+        
+    // The number of columns of data
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+        
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+        
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let requestObj = URLRequest(url: webviewURL)
+        webView.loadRequest(requestObj)
+    }
+    
     
     func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.startAnimating()
